@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Gallery | Course Bazar</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/media.css" />  
+<link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/headerFooter.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header" aria-labelledby="media-heading">
+      <h1 id="media-heading">Media Gallery</h1>
+      <p>
+        Explore highlights from our courses, instructors, and learning community.
+      </p>
+    </section>
+
+    <!-- MEDIA GRID -->
+    <section class="media-gallery" aria-label="Course media gallery">
+
+      <button class="media-item" data-full="images/web dev2.jpg">
+        <img src="images/web dev2.jpg" alt="Students learning web development" />
+      </button>
+
+      <button class="media-item" data-full="images/design2.jpg">
+        <img src="images/design2.jpg" alt="Graphic design tools and workspace" />
+      </button>
+
+      <button class="media-item" data-full="images/cyber1.jpg">
+        <img src="images/cyber1.jpg" alt="Cyber security training session" />
+      </button>
+      <button class="media-item" data-full="images/web dev2.jpg">
+        <img src="images/web dev2.jpg" alt="Students learning web development" />
+      </button>
+
+      <button class="media-item" data-full="images/design2.jpg">
+        <img src="images/aboutpage.png" alt="About pages" />
+      </button>
+
+      <button class="media-item" data-full="images/cyber1.jpg">
+        <img src="images/cyber2.jpg" alt="Cyber security training session" />
+      </button>
+      <button class="media-item" data-full="images/web dev2.jpg">
+        <img src="images/sucessstory.png" alt="Students success" />
+      </button>
+
+      <button class="media-item" data-full="images/design2.jpg">
+        <img src="images/teacher3.png" alt="lecturer in class" />
+      </button>
+
+      
+         <div class="course-grid-cta">
+          <a href="course.html" class="btn-primary">Load More</a>
+        </div>
+
+    </section>
+
+<!-- VIDEO SECTION -->
+<section class="media-video-section" aria-labelledby="video-heading">
+  <h2 id="video-heading">Featured Learning Videos</h2>
+  <p>
+    Watch short previews and highlights from our courses and instructors.
+  </p>
+
+  <div class="video-grid">
+
+    <figure class="video-card">
+      <video controls preload="metadata">
+        <source src="images/web dev.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Introduction to Web Development</figcaption>
+    </figure>
+
+    <figure class="video-card">
+      <video controls preload="metadata">
+        <source src="images/graphic.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Graphic Design Fundamentals</figcaption>
+    </figure>
+
+    <figure class="video-card">
+      <video controls preload="metadata">
+        <source src="images/cyber security.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Cyber Security Course Preview</figcaption>
+    </figure>
+       <div class="course-grid-cta">
+          <a href="course.html" class="btn-primary">Load more Videos</a>
+        </div>
+  </div>
+</section>
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div
+    id="lightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <button
+      class="lightbox-close"
+      aria-label="Close image preview"
+    >
+      &times;
+    </button>
+
+    <img id="lightbox-img" alt="" />
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- HEADER + FOOTER LOAD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("header-placeholder").innerHTML = html;
+          const currentPage =
+              window.location.pathname.split("/").pop() || "index.html";
+
+            document.querySelectorAll(".nav-menu a").forEach(link => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+              }
+            });
+        });
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+    });
+  </script>
+
+  <!-- LIGHTBOX SCRIPT -->
+  <script>
+    const items = document.querySelectorAll(".media-item");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        const fullImage = item.getAttribute("data-full");
+        lightboxImg.src = fullImage;
+        lightbox.setAttribute("aria-hidden", "false");
+        lightbox.classList.add("active");
+        closeBtn.focus();
+      });
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+    }
+  </script>
+
+</body>
+
+</html>

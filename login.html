@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Course Bazar</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/headerFooter.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+
+    <section class="auth-wrapper" aria-labelledby="login-heading">
+      <div class="auth-card">
+
+        <h1 id="login-heading">Welcome Back</h1>
+        <p class="auth-subtitle">
+          Log in to access your courses and learning dashboard.
+        </p>
+
+        <form id="login-form" class="auth-form" novalidate>
+
+          <div id="login-message" class="form-message" aria-live="polite"></div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              minlength="6"
+              aria-required="true"
+            />
+          </div>
+
+          <button type="submit" class="btn-primary">
+            Log In
+          </button>
+
+        </form>
+
+        <p class="auth-footer">
+          Don’t have an account?
+          <a href="#" aria-label="Sign up">Sign up</a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- HEADER & FOOTER LOAD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("header-placeholder").innerHTML = html;
+        });
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+
+    });
+  </script>
+
+  <!-- LOGIN VALIDATION -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("login-form");
+      const messageBox = document.getElementById("login-message");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          messageBox.textContent =
+            "Please enter a valid email and a password with at least 6 characters.";
+          messageBox.className = "form-message error";
+          return;
+        }
+
+        messageBox.textContent =
+          "Login successful! (Demo only — no server connection)";
+        messageBox.className = "form-message success";
+
+        form.reset();
+      });
+    });
+  </script>
+
+</body>
+</html>
+

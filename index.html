@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Course Bazar</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/headerFooter.css">
+
+</head>
+
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="course-list-container">
+    <!-- Welcome Popup Modal -->
+
+    <div id="welcome-popup" class="popup-container" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <div class="popup-content">
+        <h2 id="popup-title">Welcome to Course Bazar!</h2>
+        <p>We are excited to have you here. Explore our wide range of courses!</p>
+        <button id="close-popup" class="popup-close-btn">Close</button>
+      </div>
+    </div>
+
+    <div class="page-container">
+
+      <h2 class="mobile-hero-title">Learn skills that move your career forward</h2>
+
+      <!-- Carousel Section -->
+      <section class="carousel-container" role="region" aria-label="Featured Courses and Instructors">
+        <div class="carousel">
+          <div class="carousel-slide">
+            <img src="images/Homepage hero illust.png" alt="Course Bazar online learning platform">
+            <div class="carousel-caption">
+              <h2>Course Bazar</h2>
+              <p>Learn all kinds of skills digitally through Course Bazar.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="images/AIML.jpg" alt="Artificial intelligence and machine learning course">
+            <div class="carousel-caption">
+              <h2>Our Courses</h2>
+              <p>Learn and create visual projects through our excellent courses.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="images/teacher3.png" alt="Experienced instructors teaching online">
+            <div class="carousel-caption">
+              <h2>Our Teachers</h2>
+              <p>Learn with the help of experienced and supportive instructors.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h1>Explore Our Courses</h1>
+      <p>Choose from a wide range of professional online courses.</p>
+
+      <!-- Couse cards Section -->
+
+      <section class="course-grid" aria-labelledby="courses-heading">
+
+        <article class="course-card">
+          <img src="images/web dev2.jpg" alt="Web development learning session">
+          <h3>Web Development</h3>
+          <p>Learn HTML, CSS, and JavaScript and build modern websites.</p>
+          <a href="cart.html" class="btn-secondary">Enroll</a>
+        </article>
+
+        <article class="course-card">
+          <img src="images/gdesign.png" alt="Graphic design creative workspace">
+          <h3>Graphic Design</h3>
+          <p>Learn design principles & build creative visual projects.</p>
+          <a href="cart.html" class="btn-secondary">Enroll</a>
+        </article>
+
+        <article class="course-card">
+          <img src="images/cyber1.jpg" alt="Cyber security professional setup">
+          <h3>Cyber Security</h3>
+          <p>Explore ethical hacking and how to protect digital systems.</p>
+          <a href="cart.html" class="btn-secondary">Enroll</a>
+        </article>
+
+        <article class="course-card">
+          <img src="images/data1.jpg" alt="Data science instructor portrait">
+          <h3>Data Science</h3>
+          <p>Work with analytics, machine learning & data visualization.</p>
+          <a href="cart.html" class="btn-secondary">Enroll</a>
+        </article>
+
+        <article class="course-card">
+          <img src="images/ux.jpg" alt="UI and UX design instructor">
+          <h3>UI / UX Design</h3>
+          <p>Design digital products users enjoy and find easy to use.</p>
+          <a href="cart.html" class="btn-secondary">Enroll</a>
+        </article>
+
+        <article class="course-card">
+          <img src="images/project.jpg" alt="Project management teamwork session">
+          <h3>Project Management</h3>
+          <p>Build leadership, planning & agile workflow skills.</p>
+          <a href="cart.html" class="btn-secondary">Enroll</a>
+        </article>
+
+        <div class="course-grid-cta">
+          <a href="course.html" class="btn-primary">Show All Courses</a>
+        </div>
+
+      </section>
+
+
+      <section class="lecturer-cta-section" aria-labelledby="lecturer-heading">
+        <aside class="lecturer-cta-container">
+
+          <!-- LECTURER SLIDER -->
+          <section class="lecturer-slider" role="region" aria-label="lecturer showcase slider">
+            <h2>Meet Our Lecturers</h2>
+
+            <div class="slider-window">
+              <div class="slider-track">
+
+                <article class="lecturer-card">
+                  <img src="images/teacher1.jpg" alt="Dr. Alex Johnson">
+                  <h3>Dr. Alex Johnson</h3>
+                  <p>Software Engineering</p>
+                </article>
+
+                <article class="lecturer-card">
+                  <img src="images/teacher2.jpg" alt="Sarah Williams">
+                  <h3>Sarah Williams</h3>
+                  <p>UI / UX Design</p>
+                </article>
+
+                <article class="lecturer-card">
+                  <img src="images/teacher3.png" alt="Michael Chen">
+                  <h3>Michael Chen</h3>
+                  <p>Data Science & AI</p>z
+                </article>
+
+              </div>
+            </div>
+          </section>
+          <!-- CTA SECTION -->
+          <aside class="cta-side">
+            <h2>77% of learners report career benefits</h2>
+            <p>Start learning today with industry-ready courses from our experts too gain
+              a step torward in the human revoltion for the new world.This website will help you learn about latest tech
+              and make you career ready in your Field</p>
+
+            <a href="login.html" class="btn-primary">Join for Free</a>
+
+    </div>
+
+    </div>
+    </section>
+
+
+
+    <!-- ABOUT US TEASER -->
+    <section class="about-teaser" aria-labelledby="about-heading">
+      <div class="about-teaser-container">
+        <div class="about-teaser-content">
+          <h2 id="about-heading">More than courses. A learning community.</h2>
+          <p>
+            Course Bazar is built to empower learners with practical, career-ready
+            skills taught by experienced instructors. We believe learning should be
+            accessible, engaging, and impact-driven.
+          </p>
+          <a href="about.html" class="btn-secondary">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // LOAD HEADER
+      fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("header-placeholder").innerHTML = html;
+
+          // SET ACTIVE NAV
+          const currentPage =
+            window.location.pathname.split("/").pop() || "index.html";
+
+          document.querySelectorAll(".nav-menu a").forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+              link.classList.add("active");
+            }
+          });
+
+          initHamburgerMenu();
+        });
+
+      initCarousel();
+      initLecturerSlider();
+    });
+
+    // ✅ ONE hamburger function
+    function initHamburgerMenu() {
+      const toggle = document.querySelector(".nav-toggle");
+      const menu = document.querySelector(".nav-menu");
+      const icon = toggle?.querySelector("i");
+
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener("click", () => {
+        const open = menu.classList.toggle("active");
+        toggle.setAttribute("aria-expanded", open);
+        icon.className = open ? "fas fa-times" : "fas fa-bars";
+      });
+    }
+
+
+    /*  CAROUSEL FUNCTION  */
+    function initCarousel() {
+      const carousel = document.querySelector(".carousel");
+      const slides = document.querySelectorAll(".carousel-slide");
+
+      if (!carousel || slides.length === 0) return;
+
+      let index = 0;
+
+      setInterval(() => {
+        index = (index + 1) % slides.length;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      }, 4000);
+    }
+
+    /*  LECTURER SLIDER  */
+    initLecturerSlider();
+
+    function initLecturerSlider() {
+
+      const track = document.querySelector(".slider-track");
+      const cards = document.querySelectorAll(".lecturer-card");
+      let index = 0;
+
+      setInterval(() => {
+        index = (index + 1) % cards.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }, 3500);
+    }
+
+    /*  LOAD FOOTER  */
+    const footerPlaceholder = document.getElementById("footer-placeholder");
+
+    if (footerPlaceholder) {
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(html => {
+          footerPlaceholder.innerHTML = html;
+        })
+        .catch(err => console.error("Footer load failed:", err));
+    }
+  </script>
+  
+
+
+</body>
+
+</html>

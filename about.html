@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Course Bazar</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/about.css" />
+  
+<link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/headerFooter.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- PAGE INTRO -->
+    <section class="page-header" aria-labelledby="about-heading">
+      <h1 id="about-heading">About Course Bazar</h1>
+      <p>
+        Course Bazar is built to empower learners with practical, career-ready
+            skills taught by experienced instructors. We believe learning should be
+            accessible, engaging, and impact-driven.
+      </p>
+    </section>
+
+    <!-- MISSION -->
+    <section class="about-section" aria-labelledby="mission-heading">
+      <h2 id="mission-heading">Our Mission</h2>
+      <p>
+        Our mission is to make learning accessible, practical, and impactful.
+        We connect learners with experienced instructors and industry-focused
+        content that prepares them for real-world challenges, not just theory.
+      </p>
+    </section>
+
+    <!-- WHAT WE OFFER -->
+    <section class="about-section" aria-labelledby="offer-heading">
+      <h2 id="offer-heading">What We Offer</h2>
+
+      <ul class="about-list">
+        <li>Professionally designed online courses</li>
+        <li>Industry-relevant skills and technologies</li>
+        <li>Flexible, self-paced learning</li>
+        <li> Experienced and supportive instructors</li>
+        <li>A learner-focused digital experience</li>
+      </ul>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="about-section" class="value-card" aria-labelledby="why-heading">
+      <h2 id="why-heading">Why Choose Course Bazar?</h2>
+      <p>
+        Unlike traditional learning platforms, Course Bazar focuses on practical
+        outcomes. Our courses are designed with employability in mind, helping
+        learners gain confidence, competence, and clarity in their chosen field.
+      </p>
+    </section>
+
+    <!-- VALUES -->
+    <section class="about-section" aria-labelledby="values-heading">
+      <h2 id="values-heading">Our Values</h2>
+
+      <article class="values-grid">
+        <div class="value-card">
+          <h3>Accessibility</h3>
+          <p>
+            Learning should be available to everyone, regardless of background
+            or location.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Quality</h3>
+          <p>
+            We prioritize well-structured content that delivers real value.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <h3>Integrity</h3>
+          <p>
+            Transparency, honesty, and ethical design guide everything we build.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Start Learning Today</h2>
+      <p>
+        Join thousands of learners who are upgrading their skills with Course Bazar.
+      </p>
+      <a href="course.html" class="btn-primary">Browse Courses</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- HEADER & FOOTER LOAD -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("header-placeholder").innerHTML = html;
+          const currentPage =
+              window.location.pathname.split("/").pop() || "index.html";
+
+            document.querySelectorAll(".nav-menu a").forEach(link => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+              }
+            });
+        });
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        });
+
+    });
+  </script>
+
+</body>
+</html>

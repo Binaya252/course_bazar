@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Course Bazar</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+  <link rel="stylesheet" href="/css/cart.css" />
+
+<link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/headerFooter.css">
+
+  
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+  <main class="cart-wrapper">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <h1>Your Cart</h1>
+      <p>Review your selected courses before checkout.</p>
+    </section>
+
+    <!-- CART CONTENT -->
+    <section class="cart-container">
+
+      <!-- CART ITEMS -->
+      <div class="cart-items">
+
+        <article class="cart-item">
+          <img src="images/web dev2.jpg" alt="Web Development Course">
+          <div class="cart-item-details">
+            <h3>Web Development Bootcamp</h3>
+            <p>Beginner → Advanced · 40+ hours</p>
+
+            <div class="cart-actions">
+              <span class="cart-price">$149</span>
+              <button class="cart-remove">Remove</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cart-item">
+          <img src="images/design2.jpg" alt="UI UX Design Course">
+          <div class="cart-item-details">
+            <h3>UI / UX Design Fundamentals</h3>
+            <p>Design systems · Figma · UX Research</p>
+
+            <div class="cart-actions">
+              <span class="cart-price">$99</span>
+              <button class="cart-remove">Remove</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- SUMMARY -->
+      <aside class="cart-summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">$248</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Discount</span>
+          <span>-$0</span>
+        </div>
+
+        <hr>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="total">$248</span>
+        </div>
+
+        <button class="btn-primary checkout-btn">
+          Proceed to Checkout
+        </button>
+      </aside>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* ===== LOAD HEADER ===== */
+      const headerPlaceholder = document.getElementById("header-placeholder");
+
+      if (headerPlaceholder) {
+        fetch("header.html")
+          .then(res => res.text())
+          .then(html => {
+            headerPlaceholder.innerHTML = html;
+
+            // ✅ SET ACTIVE NAV LINK
+            const currentPage =
+              window.location.pathname.split("/").pop() || "index.html";
+
+            document.querySelectorAll(".nav-menu a").forEach(link => {
+              if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+              }
+            });
+          })
+          .catch(err => console.error("Header load failed:", err));
+      }
+
+      /* ===== LOAD FOOTER ===== */
+      const footerPlaceholder = document.getElementById("footer-placeholder");
+
+      if (footerPlaceholder) {
+        fetch("footer.html")
+          .then(res => res.text())
+          .then(html => {
+            footerPlaceholder.innerHTML = html;
+          })
+          .catch(err => console.error("Footer load failed:", err));
+      }
+
+    });
+    </script>
+
+</body>
+</html>
